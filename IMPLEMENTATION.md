@@ -2,8 +2,6 @@
 
 This document breaks the architecture defined in [`ARCHITECTURE.md`](./ARCHITECTURE.md) into incremental, manageable steps sized for a Claude Sonnet 4.6 coding session. Each step is independently buildable / testable and ends with its own commit so diffs stay small and reviewable.
 
-All work happens on branch `claude/architecture-plan-design-gKmpL`.
-
 ---
 
 ## Step 1 — Solution & project scaffolding
