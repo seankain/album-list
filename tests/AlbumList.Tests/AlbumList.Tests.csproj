@@ -20,6 +20,14 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+    <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\src\AlbumList\Models\Album.cs" Link="Models\Album.cs" />
+    <Compile Include="..\..\src\AlbumList\Data\AlbumSort.cs" Link="Data\AlbumSort.cs" />
+    <Compile Include="..\..\src\AlbumList\Data\AlbumDatabase.cs" Link="Data\AlbumDatabase.cs" />
   </ItemGroup>
 
 </Project>
