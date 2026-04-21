@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AlbumList.ViewModels"
+             x:Class="AlbumList.Views.AlbumEntryPage"
+             x:DataType="vm:AlbumEntryViewModel"
+             Title="Album Entry">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="8">
+
+            <Label Text="Name" FontAttributes="Bold" />
+            <Label Text="{Binding Name}" />
+
+            <Label Text="Artist" FontAttributes="Bold" />
+            <Label Text="{Binding Artist}" />
+
+            <Label Text="Release Date" FontAttributes="Bold" />
+            <Label Text="{Binding ReleaseDate, StringFormat='{0:yyyy-MM-dd}'}" />
+
+            <Label Text="Personal Rating" FontAttributes="Bold" />
+            <Slider Minimum="0" Maximum="10" Value="{Binding PersonalRating}" />
+            <Label Text="{Binding PersonalRating}" HorizontalOptions="Center" />
+
+            <Label Text="Critical Rating" FontAttributes="Bold" />
+            <Slider Minimum="0" Maximum="10" Value="{Binding CriticalRating}" />
+            <Label Text="{Binding CriticalRating}" HorizontalOptions="Center" />
+
+            <Label Text="Summary" FontAttributes="Bold" />
+            <Editor Text="{Binding Summary}"
+                    AutoSize="TextChanges"
+                    MinimumHeightRequest="100"
+                    Placeholder="Enter summary..." />
+
+            <Button Text="Save" Command="{Binding SaveCommand}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

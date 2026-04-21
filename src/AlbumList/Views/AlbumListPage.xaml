@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:AlbumList.ViewModels"
+             xmlns:models="clr-namespace:AlbumList.Models"
+             x:Class="AlbumList.Views.AlbumListPage"
+             x:DataType="vm:AlbumListViewModel"
+             Title="Albums">
+
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Appearing" Command="{Binding LoadCommand}" />
+    </ContentPage.Behaviors>
+
+    <Grid RowDefinitions="Auto,*">
+
+        <Picker Grid.Row="0"
+                Title="Sort by"
+                ItemsSource="{Binding SortOptions}"
+                SelectedItem="{Binding SelectedSort}">
+            <Picker.Behaviors>
+                <toolkit:EventToCommandBehavior EventName="SelectedIndexChanged"
+                                                Command="{Binding LoadCommand}" />
+            </Picker.Behaviors>
+        </Picker>
+
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Albums}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Album">
+                    <Grid ColumnDefinitions="*,*,Auto,Auto" Padding="12,8">
+                        <Label Grid.Column="0"
+                               Text="{Binding Name}"
+                               LineBreakMode="TailTruncation" />
+                        <Label Grid.Column="1"
+                               Text="{Binding Artist}"
+                               LineBreakMode="TailTruncation" />
+                        <Label Grid.Column="2"
+                               Text="{Binding ReleaseDate, StringFormat='{0:yyyy}'}"
+                               WidthRequest="48" />
+                        <ImageButton Grid.Column="3"
+                                     Source="dotnet_bot.png"
+                                     WidthRequest="32" HeightRequest="32"
+                                     BackgroundColor="Transparent"
+                                     Clicked="OnMoreButtonClicked">
+                            <FlyoutBase.ContextFlyout>
+                                <MenuFlyout>
+                                    <MenuFlyoutItem Text="View"
+                                                   Clicked="OnViewMenuItemClicked" />
+                                    <MenuFlyoutItem Text="Delete"
+                                                   Clicked="OnDeleteMenuItemClicked" />
+                                </MenuFlyout>
+                            </FlyoutBase.ContextFlyout>
+                        </ImageButton>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+
+</ContentPage>

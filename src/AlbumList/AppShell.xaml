@@ -3,13 +3,23 @@
     x:Class="AlbumList.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:AlbumList"
+    xmlns:views="clr-namespace:AlbumList.Views"
     Shell.FlyoutBehavior="Disabled"
-    Title="AlbumList">
+    Title="Album List">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <ShellContent
+            Title="Albums"
+            ContentTemplate="{DataTemplate views:AlbumListPage}"
+            Route="list" />
+        <ShellContent
+            Title="Add"
+            ContentTemplate="{DataTemplate views:AddAlbumPage}"
+            Route="add" />
+        <ShellContent
+            Title="Settings"
+            ContentTemplate="{DataTemplate views:SettingsPage}"
+            Route="settings" />
+    </TabBar>
 
 </Shell>
