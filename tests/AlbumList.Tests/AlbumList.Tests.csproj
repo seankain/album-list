@@ -30,6 +30,9 @@
     <Compile Include="..\..\src\AlbumList\Data\AlbumDatabase.cs" Link="Data\AlbumDatabase.cs" />
     <Compile Include="..\..\src\AlbumList\Services\IMetadataService.cs" Link="Services\IMetadataService.cs" />
     <Compile Include="..\..\src\AlbumList\Services\WikipediaMetadataService.cs" Link="Services\WikipediaMetadataService.cs" />
+    <Compile Include="..\..\src\AlbumList\Services\IFileSaver.cs" Link="Services\IFileSaver.cs" />
+    <Compile Include="..\..\src\AlbumList\Services\IExportService.cs" Link="Services\IExportService.cs" />
+    <Compile Include="..\..\src\AlbumList\Services\CsvExportService.cs" Link="Services\CsvExportService.cs" />
   </ItemGroup>
 
 </Project>
