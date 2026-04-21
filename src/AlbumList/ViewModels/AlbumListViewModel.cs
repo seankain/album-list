@@ -18,6 +18,8 @@ public partial class AlbumListViewModel : ObservableObject
     [ObservableProperty]
     private AlbumSort _selectedSort = AlbumSort.Name;
 
+    public IReadOnlyList<AlbumSort> SortOptions { get; } = Enum.GetValues<AlbumSort>();
+
     public AlbumListViewModel(AlbumDatabase database)
     {
         _database = database;
