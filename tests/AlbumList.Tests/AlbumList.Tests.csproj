@@ -28,6 +28,8 @@
     <Compile Include="..\..\src\AlbumList\Models\Album.cs" Link="Models\Album.cs" />
     <Compile Include="..\..\src\AlbumList\Data\AlbumSort.cs" Link="Data\AlbumSort.cs" />
     <Compile Include="..\..\src\AlbumList\Data\AlbumDatabase.cs" Link="Data\AlbumDatabase.cs" />
+    <Compile Include="..\..\src\AlbumList\Services\IMetadataService.cs" Link="Services\IMetadataService.cs" />
+    <Compile Include="..\..\src\AlbumList\Services\WikipediaMetadataService.cs" Link="Services\WikipediaMetadataService.cs" />
   </ItemGroup>
 
 </Project>
