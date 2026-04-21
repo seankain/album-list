@@ -8,6 +8,8 @@ public class AlbumDatabase
     private SQLiteAsyncConnection? _connection;
     private readonly string _dbPath;
 
+    public string DbPath => _dbPath;
+
     public AlbumDatabase(string? dbPath = null)
     {
 #if ANDROID
