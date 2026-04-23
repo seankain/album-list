@@ -40,8 +40,7 @@
                         <ImageButton Grid.Column="3"
                                      Source="dotnet_bot.png"
                                      WidthRequest="32" HeightRequest="32"
-                                     BackgroundColor="Transparent"
-                                     Clicked="OnMoreButtonClicked">
+                                     BackgroundColor="Transparent">
                             <FlyoutBase.ContextFlyout>
                                 <MenuFlyout>
                                     <MenuFlyoutItem Text="View"
