@@ -13,6 +13,12 @@ public partial class AlbumListPage : ContentPage
         BindingContext = vm;
     }
 
+    private void OnInfoButtonClicked(object sender, EventArgs e)
+    {
+        if (sender is ImageButton { BindingContext: Album album })
+            ViewModel.ViewCommand.Execute(album);
+    }
+
     private void OnViewMenuItemClicked(object sender, EventArgs e)
     {
         if (sender is MenuFlyoutItem { BindingContext: Album album })
