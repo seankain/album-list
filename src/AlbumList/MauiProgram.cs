@@ -26,6 +26,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<MetadataBackgroundWorker>();
         builder.Services.AddSingleton<IExportService, CsvExportService>();
         builder.Services.AddSingleton<DatabaseExportService>();
+        builder.Services.AddSingleton<CsvImportService>();
         builder.Services.AddSingleton<IFileSaver>(
             new MauiFileSaverAdapter(CommunityToolkit.Maui.Storage.FileSaver.Default));
         builder.Services.AddSingleton(Connectivity.Current);

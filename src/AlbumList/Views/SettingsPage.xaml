@@ -8,6 +8,7 @@
 
     <VerticalStackLayout Padding="16" Spacing="12">
 
+        <Button Text="Import CSV" Command="{Binding ImportCsvCommand}" />
         <Button Text="Export CSV" Command="{Binding ExportCsvCommand}" />
         <Button Text="Export Database" Command="{Binding ExportDatabaseCommand}" />
 
